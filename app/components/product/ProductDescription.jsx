@@ -111,7 +111,7 @@ const ProductDescription = ({ product }) => {
               <p>رنگ: آبی</p>
               <div className="flex gap-2 items-center">
                 {product.colors.map((color, index) => (
-                  <div className="flex flex-col gap-2">
+                  <div key={index} className="flex flex-col gap-2">
                     <span className=""></span>
                     <span></span>
                   </div>
