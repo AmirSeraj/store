@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         className={clsx(arabic.variable, "min-h-screen h-screen w-full flex flex-col justify-between bg-[#fff]")}
       >
         <Header />
-        <main className="md:py-6 py-3 sm:px-[5%] px-[2.5%]">{children}</main>
+        <main className="md:py-6 py-3 xl:px-[15%] lg:px-[10%] sm:px-[8%] px-[3%]">{children}</main>
         <Footer />
       </body>
     </html>

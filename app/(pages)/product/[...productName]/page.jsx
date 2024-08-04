@@ -1,20 +1,22 @@
 import Gallery from "@/app/components/product/Gallery";
+import MovingShoppingCart from "@/app/components/product/MovingShoppingCart";
 import ProductDescription from "@/app/components/product/ProductDescription";
 import React from "react";
 
 const SingleProduct = ({ params }) => {
   const { productName } = params;
   const product = {
+    leftInStock: 'فقط دو عدد در انبار باقی مانده است',
     title:
       "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت - نات اکتیو",
     colors: [
       {
         title: "مشکی",
-        color: "#000",
+        color: "black",
       },
       {
-        title: "سفید",
-        color: "#fff",
+        title: "قرمز",
+        color: "red",
       },
       {
         title: "آبی",
@@ -106,7 +108,8 @@ const SingleProduct = ({ params }) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
+      <MovingShoppingCart product={product} />
       <div className="grid grid-cols-12">
         <div className="lg:col-span-4 col-span-12 p-4">
           <Gallery productImages={product.productImages} />
