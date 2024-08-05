@@ -24,7 +24,7 @@ const ProductDescription = ({ product }) => {
     );
   };
   return (
-    <div className="lg:col-span-8 col-span-12 flex flex-col md:p-4 p-2">
+    <div className="lg:col-span-6 col-span-12 flex flex-col md:p-4 p-2">
       <h1 className="text-black md:text-2xl sm:text-lg text-sm font-bold">
         {product.title}
       </h1>

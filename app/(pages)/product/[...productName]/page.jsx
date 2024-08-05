@@ -1,12 +1,17 @@
+import FrequentlyAsked from "@/app/components/product/FrequentlyAsked";
 import Gallery from "@/app/components/product/Gallery";
 import MovingShoppingCart from "@/app/components/product/MovingShoppingCart";
+import ProductDefinition from "@/app/components/product/ProductDefinition";
 import ProductDescription from "@/app/components/product/ProductDescription";
+import SimilarProducts from "@/app/components/product/SimilarProducts";
+import TechnicalDetail from "@/app/components/product/TechnicalDetail";
+import WarrantyDelivery from "@/app/components/product/WarrantyDelivery";
 import React from "react";
 
 const SingleProduct = ({ params }) => {
   const { productName } = params;
   const product = {
-    leftInStock: 'فقط دو عدد در انبار باقی مانده است',
+    leftInStock: "فقط دو عدد در انبار باقی مانده است",
     title:
       "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت - نات اکتیو",
     colors: [
@@ -107,15 +112,184 @@ const SingleProduct = ({ params }) => {
     ],
   };
 
+  const similarProducts = [
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone1.avif",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone2.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone3.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone4.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone5.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone2.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone3.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone4.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone2.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone5.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: "گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone4.webp",
+      colors: ["red", "blue", "gray"],
+    },
+    {
+      title: "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      desc: " گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و گوشی موبایل سامسونگ مدل Galaxy S23 FE دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت - ویتنامم 8 گیگابایت - ویتنام",
+      rate: 4.4,
+      price: 29185000,
+      img: "/product/related/phone2.webp",
+      colors: ["red", "blue", "gray"],
+    },
+  ];
+
+  const productDefinition = [
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aliquam laborum provident consectetur quae rerum! Fugiat et quas atque non deserunt repudiandae, asperiores blanditiis ad qui cum quasi, aspernatur nemo animi itaque pariatur. Esse culpa ad distinctio ipsa voluptatum eveniet vitae, dolor ducimus eum error adipisci dolorem at dolorum. Nostrum quae soluta, voluptate ad blanditiis aliquam omnis tempora voluptas veniam vero harum consequuntur cumque. Repudiandae rem dolor delectus! Eaque dolor minus saepe porro at laudantium quas cupiditate sapiente blanditiis? Commodi obcaecati, ipsam dolores earum quisquam excepturi sit ratione laboriosam tenetur accusantium totam nulla, veritatis veniam facere perferendis repudiandae repellat. Sit.",
+  ];
+
+  const technicaldetails = [
+    {
+      title: "صفحه نمایش",
+      value: "6.1-inch Super Retina XDR display with True Tone",
+    },
+    {
+      title: "دوربین پشت",
+      value: "Dual 12MP camera system",
+    },
+    {
+      title: "دوربین جلو",
+      value: "12 MP TrueDepth",
+    },
+    {
+      title: "ظرفیت",
+      value: "128 GB, 256 GB, 512 GB",
+    },
+    {
+      title: "پردازنده",
+      value: "Super powerful and intelligent A15 Bionic chip",
+    },
+    {
+      title: "SIM card",
+      value: "Dual SIM – nano-SIM and eSIM",
+    },
+    {
+      title: "بلوتوث",
+      value: "5.0",
+    },
+    {
+      title: "شبکه",
+      value: "5G / LTE, Wi-Fi",
+    },
+  ];
+
+  const questions = [
+    {
+      title: "قیمت این گوشی بستگی به چه مواردی داه؟",
+      value: "قیمت این گوشی به موارد زیادی بستگی دارد مثل نور صفحه و ....",
+    },
+    {
+      title: "قیمت این گوشی بستگی به چه مواردی داه؟",
+      value: "قیمت این گوشی به موارد زیادی بستگی دارد مثل نور صفحه و ....",
+    },
+    {
+      title: "قیمت این گوشی بستگی به چه مواردی داه؟",
+      value: "قیمت این گوشی به موارد زیادی بستگی دارد مثل نور صفحه و ....",
+    },
+    {
+      title: "قیمت این گوشی بستگی به چه مواردی داه؟",
+      value: "قیمت این گوشی به موارد زیادی بستگی دارد مثل نور صفحه و ....",
+    },
+    {
+      title: "قیمت این گوشی بستگی به چه مواردی داه؟",
+      value: "قیمت این گوشی به موارد زیادی بستگی دارد مثل نور صفحه و ....",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center">
       <MovingShoppingCart product={product} />
-      <div className="grid grid-cols-12">
-        <div className="lg:col-span-4 col-span-12 p-4">
+      <div className="grid grid-cols-12 xl:px-[15%] lg:px-[10%] sm:px-[8%] px-[3%]">
+        <div className="lg:col-span-6 col-span-12 p-4">
           <Gallery productImages={product.productImages} />
         </div>
         <ProductDescription product={product} />
       </div>
+      <SimilarProducts features={similarProducts} title={"محصولات مشابه"} />
+      <SimilarProducts features={similarProducts} title={"پرفروش ترین ها"} />
+      <div className="w-full flex justify-center items-center min-h-[220px] bg-[#f5f5f5] mt-10">
+        <WarrantyDelivery />
+      </div>
+      <ProductDefinition productDefinition={productDefinition} />
+      <TechnicalDetail technicaldetails={technicaldetails} />
+      <FrequentlyAsked data={questions} />
     </div>
   );
 };

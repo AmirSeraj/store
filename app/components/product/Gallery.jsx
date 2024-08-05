@@ -31,8 +31,8 @@ const Gallery = ({ productImages }) => {
         <SwiperSlide key={index} className="w-full !flex justify-center items-center">
           <Image
             src={img}
-            width={390}
-            height={530}
+            width={550}
+            height={550}
             className="drop-shadow-2xl"
           />
         </SwiperSlide>
