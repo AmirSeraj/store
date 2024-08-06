@@ -53,13 +53,13 @@ const Footer = () => {
                     </div>
                     <div className="flex mt-20 gap-4 text-center">
                         <a href="https://www.example.com/kasbokar" aria-label="Kasbokar">
-                            <Image className="object-contain" src='/kasbokar.jpg' width={70} height={50} alt="Kasbokar" />
+                            <Image className="object-contain" src='/kasbokar.png' width={70} height={50} alt="Kasbokar" />
                         </a>
                         <a href="https://www.example.com/rezi" aria-label="Rezi">
-                            <Image className="object-contain" src='/rezi.jpg' width={70} height={50} alt="Rezi" />
+                            <Image className="object-contain" src='/rezi.png' width={70} height={50} alt="Rezi" />
                         </a>
                         <a href="https://www.example.com/81" aria-label="81">
-                            <Image className="object-contain" src='/81.jpg' width={70} height={50} alt="81" />
+                            <Image className="object-contain" src='/81.png' width={70} height={50} alt="81" />
                         </a>
                     </div>
                 </div>
