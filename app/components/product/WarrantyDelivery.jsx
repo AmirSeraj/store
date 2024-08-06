@@ -17,7 +17,7 @@ const WarrantyDelivery = () => {
     );
   };
   return (
-    <div className="xl:px-[15%] lg:px-[10%] sm:px-[8%] px-[3%] grid md:grid-cols-4 grid-cols-1 h-full w-full">
+    <div className="2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%] grid md:grid-cols-4 grid-cols-1 h-full w-full">
       <Card img={"/product/express.svg"} title={"اﻣﮑﺎن ﺗﺤﻮﯾﻞ اﮐﺴﭙﺮس"} />
       <Card img={"/product/days-return.svg"} title={"هفت روز ضمانت بازگشت کالا"} />
       <Card img={"/product/cash-on-delivery.svg"} title={"امکان پرداخت در محل"} />

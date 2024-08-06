@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       >
         <NextUIProvider>
           <Header />
-          <main className="md:py-6 py-3">{children}</main>
+          <main className="md:pt-6 pt-3">{children}</main>
           <Footer />
         </NextUIProvider>
       </body>

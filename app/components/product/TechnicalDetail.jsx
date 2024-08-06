@@ -9,10 +9,10 @@ const TechnicalDetail = ({ technicaldetails }) => {
       {technicaldetails.map((item, index) => (
         <div
           key={index}
-          className="flex sm:flex-row flex-col sm:gap-1 gap-2 items-center w-full min-h-[40px] py-2"
+          className="flex sm:flex-row flex-col sm:gap-1 gap-2 items-center w-full min-h-[40px] py-2 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%]"
           style={{ backgroundColor: index % 2 === 0 ? "#f5f5f5" : "#fff" }}
         >
-          <div className="w-1/3 flex justify-center items-center">
+          <div className="w-1/3 flex sm:justify-start justify-center items-center">
             <p className="text-sm">{item.title}</p>
           </div>
           <div className="w-2/3 flex sm:justify-start justify-center sm:text-start text-center items-center">

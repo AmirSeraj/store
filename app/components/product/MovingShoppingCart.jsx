@@ -58,8 +58,8 @@ const MovingShoppingCart = ({ product }) => {
   return (
     <>
       {showDiv && (
-        <div className="fixed lg:top-[95px] top-[143px] bg-white w-full h-[130px] border-b border-slate-300 z-50 shadow-xl xl:px-[15%] lg:px-[10%] sm:px-[8%] px-[3%] flex md:flex-row flex-col items-center justify-between">
-          <div className="flex md:flex-row flex-col items-center justify-center sm:gap-4 gap-2 h-full md:w-1/2 w-full">
+        <div className="fixed lg:top-[95px] top-[143px] bg-white w-full h-[130px] border-b border-slate-300 z-50 shadow-xl 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%] flex md:flex-row flex-col items-center justify-between">
+          <div className="flex md:flex-row flex-col items-center sm:gap-4 gap-2 h-full md:w-1/2 w-full">
             <div className="items-center justify-center flex bg-blue-700 hover:bg-blue-500 py-2 rounded-full cursor-pointer mt-2 md:w-[300px] w-full">
               تکمیل خرید
             </div>

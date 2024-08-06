@@ -21,20 +21,21 @@ const Gallery = ({ productImages }) => {
       modules={[Navigation, Pagination, A11y]}
       spaceBetween={50}
       slidesPerView={1}
-      //   navigation
+      // navigation={{
+      //   nextEl: ".next",
+      //   prevEl: ".prev",
+      // }}
       pagination={{ clickable: true }}
       onSwiper={(swiper) => setSwiperInstance(swiper)}
       onSlideChange={() => console.log("slide change")}
       className="w-full h-[600px] relative"
     >
       {productImages.map((img, index) => (
-        <SwiperSlide key={index} className="w-full !flex justify-center items-center">
-          <Image
-            src={img}
-            width={550}
-            height={550}
-            className="drop-shadow-2xl"
-          />
+        <SwiperSlide
+          key={index}
+          className="w-full !flex justify-center items-center"
+        >
+          <Image src={img} width={550} height={550} />
         </SwiperSlide>
       ))}
       <div>

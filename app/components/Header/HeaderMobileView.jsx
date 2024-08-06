@@ -5,7 +5,7 @@ import ShoppingCart from "./ShoppingCart";
 
 const HeaderMobileView = () => {
   return (
-    <header className="w-full bg-white py-5 px-3 flex flex-col gap-3 lg:hidden">
+    <header className="w-full bg-white py-5 sm:px-[10%] px-[5%] flex flex-col gap-3 lg:hidden">
       <div className="flex justify-between items-center">
         <IoMenuOutline size={28} />
         <div className="flex justify-center items-center gap-2">

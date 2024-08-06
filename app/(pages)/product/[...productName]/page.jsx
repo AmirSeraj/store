@@ -276,14 +276,24 @@ const SingleProduct = ({ params }) => {
   return (
     <div className="flex flex-col items-center">
       <MovingShoppingCart product={product} />
-      <div className="grid grid-cols-12 xl:px-[15%] lg:px-[10%] sm:px-[8%] px-[3%]">
+      <div className="grid grid-cols-12 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%]">
         <div className="lg:col-span-6 col-span-12 p-4">
           <Gallery productImages={product.productImages} />
         </div>
         <ProductDescription product={product} />
       </div>
-      <SimilarProducts features={similarProducts} title={"محصولات مشابه"} />
-      <SimilarProducts features={similarProducts} title={"پرفروش ترین ها"} />
+      <SimilarProducts
+        features={similarProducts}
+        title={"محصولات مشابه"}
+        nextClass="similar-next"
+        prevClass="similar-prev"
+      />
+      <SimilarProducts
+        features={similarProducts}
+        title={"پرفروش ترین ها"}
+        nextClass="best-sellers-next"
+        prevClass="best-sellers-prev"
+      />
       <div className="w-full flex justify-center items-center min-h-[220px] bg-[#f5f5f5] mt-10">
         <WarrantyDelivery />
       </div>
