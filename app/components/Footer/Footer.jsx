@@ -1,11 +1,71 @@
-import React from 'react'
+import React from 'react';
+import { ImLinkedin } from "react-icons/im";
+import { FaTwitter } from "react-icons/fa";
+import { CiInstagram } from "react-icons/ci";
+import { SiAparat } from "react-icons/si";
+import Image from "next/image";
 
 const Footer = () => {
-  return (
-    <footer className='text-white'>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ducimus facere id! Repellat, nam ducimus, accusamus cum similique architecto nulla non odio adipisci fugit incidunt tempore reiciendis? Doloremque officia ullam eius nam distinctio nostrum aspernatur, quis quae laboriosam exercitationem maxime est? Veritatis labore nesciunt laborum officia non earum sint, sed ad! Accusantium, odio amet! Consequuntur quam tempora delectus? Hic quaerat voluptates excepturi praesentium eos! Quis atque voluptas, quibusdam aperiam repellendus culpa mollitia minus reiciendis dolores natus non quo nisi porro dignissimos autem optio praesentium, voluptate eum dolorem modi at facilis voluptates ea sunt? Facere dicta optio qui assumenda nostrum nam nulla officiis. Distinctio, doloribus. Blanditiis nam rerum atque temporibus adipisci maxime, nesciunt consectetur deserunt voluptatum, dolor a repellat distinctio assumenda voluptatem nulla quisquam fuga culpa tempore laborum ullam eligendi odit quia. Error distinctio possimus officiis dignissimos, quia asperiores quo aliquam maiores, suscipit placeat quaerat velit, quod saepe id adipisci. Quae adipisci nobis, sunt, unde perferendis autem, nemo explicabo esse at cum provident pariatur aliquam inventore accusamus eveniet commodi. Dignissimos cumque dolores magni quia repellendus, fugit quasi recusandae, impedit, amet delectus facere. Hic pariatur error vero accusantium et, dolorum omnis nobis cum modi dicta ipsum ad explicabo laborum facere, id corporis iste nisi autem totam quas? Quisquam omnis a consequuntur quidem distinctio incidunt doloremque tempore labore sequi, excepturi accusamus at rem quia, doloribus, impedit voluptas eum dicta provident obcaecati esse eius. Veniam laboriosam quos pariatur laborum, quae distinctio quisquam amet dolorem minus libero cupiditate cumque molestiae id dolorum quod quam deleniti ut magnam. Sunt eveniet rerum ratione pariatur itaque id veniam quis provident esse accusantium molestias voluptas iusto omnis velit nobis, tenetur facere! Cum officiis architecto a quam, deserunt aspernatur asperiores. Nostrum iure quae et ullam excepturi eligendi hic laudantium ducimus nobis, assumenda molestiae amet praesentium rem illum quibusdam sequi obcaecati cum aliquam voluptatibus quis sunt. Vitae ipsam, rem aperiam porro ullam corporis earum voluptas. Voluptas velit odio labore dicta sed itaque magni suscipit maiores unde, perspiciatis totam tenetur iusto voluptatem doloremque molestias, aspernatur, ipsa laudantium facilis doloribus amet incidunt necessitatibus? Qui quaerat, excepturi nihil minus ducimus impedit dolore dignissimos placeat modi. Quisquam eius consequuntur voluptatem ipsum inventore repudiandae laudantium ullam vero minima! Asperiores, veniam vitae, ipsum repudiandae magnam in esse libero culpa quam illo non, tenetur aperiam unde placeat. Enim labore voluptatem asperiores cumque laboriosam delectus aliquam, fugit earum repellat. Doloribus, ullam dignissimos? Quis enim eum fugit similique nesciunt nulla fuga pariatur eius tempore, dicta nemo et doloremque. Harum dignissimos perspiciatis laudantium delectus officiis. Itaque earum sit quaerat, nihil officiis impedit odio incidunt, quibusdam ea dolorem temporibus ipsam vero aliquam enim qui harum nemo ab! Sit ratione iure natus nemo vero unde dignissimos consectetur voluptatum, optio dolorum consequuntur, qui voluptas, beatae maiores velit impedit! Fugit dicta minima, labore autem velit doloribus tempora doloremque corporis dolor consectetur ea, atque iure quod, vitae corrupti exercitationem sequi inventore distinctio. Dolorem nobis atque error qui. Commodi quisquam deleniti beatae itaque aspernatur perferendis odio similique repellat optio. Ducimus, placeat facilis cupiditate nesciunt beatae neque impedit?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus tempora unde culpa dolorem! Facere dolore recusandae atque aspernatur perferendis maxime, iusto quos rem culpa necessitatibus aut possimus molestias placeat fugiat doloremque nesciunt sint magnam voluptatum repellat assumenda aliquid incidunt ex. Accusamus atque distinctio perferendis ex rerum molestiae unde earum eius, quod, facilis sequi modi voluptatem aperiam. Modi perferendis quasi recusandae corrupti distinctio beatae officiis repudiandae quas ad deleniti accusamus aut maxime aliquam quos, doloremque id nesciunt cupiditate reiciendis, illo sunt mollitia harum? Et laborum reiciendis, aperiam, consequuntur accusantium fugiat ab velit voluptate exercitationem amet quisquam! Perferendis, aliquid? Expedita eligendi voluptate animi, iste accusantium ab praesentium nam nobis magni, optio vel repellat quasi quas laboriosam saepe? Cumque, ipsam magni aspernatur cum fuga laudantium ea odit esse, aperiam sit a perferendis nisi corrupti nulla voluptatibus libero impedit quam placeat inventore! Sunt dolore recusandae asperiores hic dolorum voluptates officia repellat excepturi explicabo fugit aspernatur minus alias aliquam culpa consectetur dolor tenetur ullam deleniti dolores provident eius iure, necessitatibus repellendus! Laborum itaque quod fuga, in temporibus rerum nostrum voluptas sequi at, corporis quos officia perferendis aut culpa sapiente sed mollitia inventore magnam repellat alias qui. Quas dolorum est, consectetur dignissimos minus modi aliquam beatae voluptatum cupiditate laboriosam omnis ducimus provident illo sint rerum vitae totam. Possimus, minus. Omnis aliquam excepturi eum distinctio, architecto, illum, perspiciatis ratione consequatur voluptatum totam temporibus dignissimos commodi. Neque dicta natus est maxime dolorum, quis numquam repellat dolore mollitia ratione. Cumque laborum libero, officiis consequuntur ipsam repellendus labore recusandae, explicabo ipsa architecto ad, id quibusdam. Accusamus, similique sit? Perspiciatis, tempore obcaecati? Quisquam qui necessitatibus voluptate facilis omnis odio ad cum tempore minus pariatur distinctio, amet eius. Voluptate fugit nesciunt quae nulla nobis dignissimos qui incidunt, hic inventore magni atque sed tempora nam voluptatem unde sint. Possimus voluptate quod est esse, culpa voluptatibus officia nostrum, asperiores harum vel obcaecati totam temporibus deleniti numquam quasi laborum repellat. Possimus commodi, soluta distinctio minima voluptatem quae consectetur fuga quo ipsa vel quisquam voluptatibus rerum magnam dolor expedita sed praesentium perspiciatis quaerat, impedit similique optio adipisci! Incidunt inventore in cumque quia porro architecto maxime exercitationem totam, veritatis nihil ducimus ut sequi expedita! Atque, quam sed optio obcaecati debitis illum? Quibusdam consequatur sed ut repudiandae distinctio est voluptatem neque quod optio eos! Nisi, quod? Labore provident omnis aspernatur quo velit esse excepturi itaque cupiditate atque iste similique quas culpa voluptas eos maiores accusamus asperiores est commodi, eaque nihil minus officia magni nostrum obcaecati. Hic nisi suscipit culpa porro tempore nulla modi doloremque a exercitationem quasi. Hic quidem magnam quibusdam consectetur, nulla doloremque, animi dignissimos voluptatibus tenetur quae dolorem expedita, cumque ullam. Asperiores dicta excepturi, doloribus veniam, quibusdam harum tempore quod, illum impedit provident sunt quia tempora magnam consectetur dolorem temporibus. Voluptas quibusdam nostrum nam laborum minus dicta beatae, laboriosam aperiam. Eius culpa eveniet ipsa explicabo, provident id ducimus dolor quas! Enim, sunt placeat at numquam sapiente velit, ullam incidunt cum voluptatibus, eligendi praesentium molestiae magnam? Facilis corporis deleniti cupiditate. Molestias, deserunt atque! Incidunt tempora sapiente natus?</footer>
-  )
+    return (
+        <footer className='bg-gray-800 text-white p-4'>
+            <div className='grid grid-cols-4 grid-rows-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center mt-6'>
+                <div className='text-center'>
+                    <h3 className="text-neutral-100 font-serif text-lg items-center">تماس با ما</h3>
+                    <div className="flex flex-col mt-4">
+                        <a className="text-gray-400 mb-4" href="tel:123456789">شماره تماس : 123-456-789</a>
+                        <a className="text-gray-400 mb-4" href="fax:987654321">فکس : 987-654-321</a>
+                        <a className="text-gray-400 mb-4" href="https://www.example.com/address">آدرس : Example Street, City</a>
+                    </div>
+                </div>
+                <div className='text-center'>
+                    <h3 className="text-neutral-100 font-serif text-lg items-center">راهنمای خرید</h3>
+                    <div className="flex flex-col mt-4 text-center">
+                        <a className="text-gray-400 mb-4" href="/faq">سوالات پرتکرار</a>
+                        <a className="text-gray-400 mb-4" href="/return-policy">نحوه عودت کالا</a>
+                        <a className="text-gray-400 mb-4" href="/terms">شرایط استفاده</a>
+                        <a className="text-gray-400 mb-4" href="/privacy">حریم خصوصی</a>
+                        <a className="text-gray-400 mb-4" href="/feedback">انتقادات و پیشنهادات</a>
+                    </div>
+                </div>
+                <div className='text-center'>
+                    <h3 className="text-neutral-100 font-serif text-lg items-center">خدمات مشتریان</h3>
+                    <div className="flex flex-col mt-4">
+                        <a className="text-gray-400 mb-4" href="/order-guide">نحوه ثبت سفارشات</a>
+                        <a className="text-gray-400 mb-4" href="/shipping">رویه ارسال سفارشات</a>
+                        <a className="text-gray-400 mb-4" href="/payment-methods">شیوه های پرداخت</a>
+                    </div>
+                </div>
+                <div className='text-center items-center'>
+                    <h3 className="text-neutral-100 font-serif text-lg ">همراه ما باشید</h3>
+                    <div className="flex gap-4 mt-4">
+                        <a href="https://www.linkedin.com" aria-label="LinkedIn">
+                            <ImLinkedin className='w-5 h-5 text-gray-400 hover:text-white' />
+                        </a>
+                        <a href="https://www.twitter.com" aria-label="Twitter">
+                            <FaTwitter className='w-5 h-5 text-gray-400 hover:text-white' />
+                        </a>
+                        <a href="https://www.instagram.com" aria-label="Instagram">
+                            <CiInstagram className='w-5 h-5 text-gray-400 hover:text-white' />
+                        </a>
+                        <a href="https://www.aparat.com" aria-label="Aparat">
+                            <SiAparat className='w-5 h-5 text-gray-400 hover:text-white' />
+                        </a>
+                    </div>
+                    <div className="flex mt-20 gap-4 text-center">
+                        <a href="https://www.example.com/kasbokar" aria-label="Kasbokar">
+                            <Image className="object-contain" src='/kasbokar.png' width={70} height={50} alt="Kasbokar" />
+                        </a>
+                        <a href="https://www.example.com/rezi" aria-label="Rezi">
+                            <Image className="object-contain" src='/rezi.png' width={70} height={50} alt="Rezi" />
+                        </a>
+                        <a href="https://www.example.com/81" aria-label="81">
+                            <Image className="object-contain" src='/81.png' width={70} height={50} alt="81" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    )
 }
 
-export default Footer
+export default Footer;
