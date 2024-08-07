@@ -1,9 +1,9 @@
 import CardComp from "@/app/components/CardComp";
+import ModalComp from "@/app/components/search/ModalComp";
 import Model from "@/app/components/search/Model";
 import PriceRange from "@/app/components/search/PriceRange";
 import Storage from "@/app/components/search/Storage";
 import { Pagination } from "@nextui-org/pagination";
-import { IoFilterSharp } from "react-icons/io5";
 
 const Search = ({ params }) => {
   const { searchParam } = params;
@@ -97,21 +97,30 @@ const Search = ({ params }) => {
       colors: ["red", "blue", "gray"],
     },
   ];
+
+  const filters = [
+    "SumSung S90",
+    "Huwaui S20",
+    "Hotel resort",
+    "Cottage",
+    "Villa",
+    "Apartment",
+    "Condo",
+    "Private vacation home",
+  ];
+
+  const storageData = ["32 GB", "64 GB", "128 GB", "256 GB", "512 GB", "1 T"];
+
   return (
-    <div className="2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%] grid grid-cols-12 pt-3 pb-6">
+    <div className="2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%] grid grid-cols-12 lg:pt-3 pt-0 pb-6">
+      <ModalComp filters={filters} data={storageData} />
       <div className="lg:col-span-2 order-1 lg:flex hidden flex-col gap-2">
         <h1 className="text-black text-xl">فیلتر</h1>
-        <Model />
-        <Storage />
+        <Model filters={filters} />
+        <Storage data={storageData} />
         <PriceRange />
       </div>
       <div className="flex flex-col gap-2 lg:col-span-10 col-span-12 lg:order-1 order-2">
-        
-        <div className="lg:hidden flex justify-evenly items-center border-2 border-slate-600 w-32 py-2 rounded-lg cursor-pointer">
-          <p className="text-xl">فیلتر</p>
-          <IoFilterSharp />
-        </div>
-
         <div className=" gap-3 flex flex-wrap justify-center">
           {similarProducts?.map((item, i) => (
             <CardComp

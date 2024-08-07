@@ -1,15 +1,7 @@
 import Image from "next/image";
 import { MdStarRate } from "react-icons/md";
 
-const CardComp = ({
-  img,
-  colors,
-  desc,
-  price,
-  rate,
-  title,
-  className,
-}) => {
+const CardComp = ({ img, colors, desc, price, rate, title, className }) => {
   return (
     <div
       className={`w-[270px] h-[440px] flex flex-col items-center gap-2 px-3 py-2 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-xl shadow-gray-500  group overflow-hidden ${className}`}
@@ -40,7 +32,7 @@ const CardComp = ({
 
       <div className="flex justify-between items-center py-2 px-1 w-full">
         <div className="flex items-center gap-1">
-          <p className="font-bold text-xl">{price}</p>
+          <p className="font-bold text-xl">{Number(price).toLocaleString()}</p>
           <p className="text-lg">تومان</p>
         </div>
         <div className="flex gap-1 justify-center items-center">

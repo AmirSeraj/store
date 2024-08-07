@@ -2,18 +2,7 @@ import React from "react";
 import SeeMoreLess from "./SeeMoreLess";
 import CheckboxComp from "./CheckboxComp";
 
-const filters = [
-  "SumSung S90",
-  "Huwaui S20",
-  "Hotel resort",
-  "Cottage",
-  "Villa",
-  "Apartment",
-  "Condo",
-  "Private vacation home",
-];
-
-const Model = () => {
+const Model = ({filters}) => {
   return (
     <div className="flex flex-col gap-1 mt-4">
       <p className="font-semibold text-sm">مدل گوشی</p>
