@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import clsx from "clsx";
 import { NextUIProvider } from "@nextui-org/system";
+import Script from "next/script";
 
 export const metadata = {
   title: "فروشگاه من",
