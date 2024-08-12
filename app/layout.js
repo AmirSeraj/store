@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import clsx from "clsx";
 import { NextUIProvider } from "@nextui-org/system";
-import Script from "next/script";
 
 export const metadata = {
   title: "فروشگاه من",
@@ -28,7 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className={clsx(
           arabic.variable,
-          "min-h-screen h-screen w-full flex flex-col justify-between bg-[#fff]"
+          "w-full"
         )}
       >
         <NextUIProvider>

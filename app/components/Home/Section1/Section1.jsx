@@ -30,7 +30,7 @@ const Section1 = () => {
   ];
 
   return (
-    <div className="grid grid-cols-12 gap-3 w-full h-[500px]">
+    <div className="grid grid-cols-12 gap-3 w-full h-[500px] bg-white">
       <div className="flex flex-col col-span-3 gap-2 w-full h-full bg-white">
         <div className="flex gap-3 items-center bg-[#0063d1] py-4 px-3">
           <AiOutlineMenu size={24} />
