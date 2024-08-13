@@ -35,11 +35,11 @@ export const Cover = ({
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             ref={ref}
-            className="relative hover:bg-neutral-900  group/cover dark:bg-neutral-900 bg-neutral-700 px-2 py-2 w-full h-full -skew-x-[0] flex items-center justify-center transition duration-200"
+            className="relative hover:bg-neutral-900  group/cover dark:bg-neutral-900 bg-neutral-900 px-2 py-2 w-full h-full -skew-x-[0] flex items-center justify-center transition duration-200"
         >
-            <div className={`bg-neutral-700 ${hovered && 'bg-neutral-900'} absolute skew-x-[25deg] -right-[25px] w-full h-full`} />
+            <div className={`bg-neutral-900 ${hovered && 'bg-neutral-900'} absolute skew-x-[25deg] -right-[25px] w-full h-full`} />
             <AnimatePresence>
-                {hovered && (
+                {/* {hovered && ( */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -82,7 +82,7 @@ export const Cover = ({
                             />
                         </motion.div>
                     </motion.div>
-                )}
+                {/* )} */}
             </AnimatePresence>
             {beamPositions.map((position, index) => (
                 <Beam
@@ -99,9 +99,9 @@ export const Cover = ({
             <motion.span
                 key={String(hovered)}
                 animate={{
-                    scale: hovered ? 0.8 : 1,
-                    x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
-                    y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
+                    scale:  1,
+                    x: [0, -30, 30, -30, 30, 0],
+                    y: [0, 30, -30, 30, -30, 0],
                 }}
                 exit={{
                     filter: "none",
@@ -129,7 +129,7 @@ export const Cover = ({
                     },
                 }}
                 className={cn(
-                    "dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200",
+                    "dark:text-white inline-block text-white relative z-20 group-hover/cover:text-white transition duration-200",
                     className
                 )}
             >

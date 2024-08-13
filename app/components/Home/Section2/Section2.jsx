@@ -3,7 +3,7 @@ import RightSection from './RightSection'
 
 const Section2 = () => {
   return (
-    <div className='grid grid-cols-12 w-full bg-white gap-4'>
+    <div className='grid grid-cols-12 w-full bg-white gap-4 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%]'>
       <RightSection />
       <div className='relative grid lg:col-span-4 col-span-12 -skew-x-3 border-r-2 border-slate-400 lg:order-2 order-1'>
 

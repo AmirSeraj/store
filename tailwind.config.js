@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 // tailwind.config.js
 const { nextui } = require("@nextui-org/theme");
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 module.exports = {
   content: [
@@ -9,6 +15,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/components/(accordion|pagination|slider|modal|button).js",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -37,5 +44,20 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
   },
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    addVariablesForColors
+  ],
 };
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
