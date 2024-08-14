@@ -20,7 +20,7 @@ const SwiperComp = ({ section1Swiper }) => {
     //     disableOnInteraction: false,
     //   }}
       modules={[Autoplay, Pagination, EffectFade]}
-      className="col-span-9 h-full bg-[url('/bgg.jpg')] bg-no-repeat w-full bg-cover"
+      className="lg:col-span-9 col-span-12 h-full bg-[url('/bgg.jpg')] bg-no-repeat w-full bg-cover"
     >
       {section1Swiper.map((item, index) => (
         <SwiperSlide

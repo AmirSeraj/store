@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@nextui-org/button";
 import React, { useEffect, useState } from "react";
 import { BsInfoCircle } from "react-icons/bs";
 
@@ -59,10 +60,13 @@ const MovingShoppingCart = ({ product }) => {
     <>
       {showDiv && (
         <div className="fixed lg:top-[95px] top-[143px] bg-white w-full h-[130px] border-b border-slate-300 z-50 shadow-xl 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%] flex md:flex-row flex-col items-center justify-between">
-          <div className="flex md:flex-row flex-col items-center sm:gap-4 gap-2 h-full md:w-1/2 w-full">
-            <div className="items-center justify-center flex bg-blue-700 hover:bg-blue-500 py-2 rounded-full cursor-pointer mt-2 md:w-[300px] w-full">
-              تکمیل خرید
-            </div>
+          <div className="flex md:flex-row flex-col items-center lg:gap-4 gap-2 h-full md:w-1/2 w-full">
+            {/* <div className="items-center justify-center flex bg-blue-700 hover:bg-blue-500 py-2 rounded-full cursor-pointer mt-2 md:w-[300px] w-full">
+              اضافه شدن به سبد خرید
+            </div> */}
+            <Button color="primary" variant="shadow" size="lg" className="w-[400px] lg:mt-0 mt-2">
+              اضافه شدن به سبد خرید
+            </Button>
             <PriceFunc className={"md:flex hidden"} />
             <div className="md:hidden flex justify-between w-full items-center">
               <PriceFunc />

@@ -2,15 +2,15 @@
 import { Toman } from "../Icons";
 import { FiCheck } from "react-icons/fi";
 import { BsInfoCircle } from "react-icons/bs";
+import { Button } from "@nextui-org/button";
 
 const ProductDescription = ({ product }) => {
   const Card = ({ title, active, price, handleClick }) => {
     return (
       <button
         onClick={handleClick}
-        className={`flex flex-col px-3 py-4 justify-center items-center gap-2 bg-slate-200 rounded-lg shadow-lg cursor-pointer w-[130px] ${
-          active && "bg-blue-400 border-2 border-blue-700"
-        }`}
+        className={`flex flex-col px-3 py-4 justify-center items-center gap-2 bg-slate-200 rounded-lg shadow-lg cursor-pointer w-[130px] ${active && "bg-blue-400 border-2 border-blue-700"
+          }`}
       >
         <p className={`${active && "text-blue-700"} text-[0.8rem]`} dir="ltr">
           {title}
@@ -146,7 +146,10 @@ const ProductDescription = ({ product }) => {
               <span className="text-slate-800 text-sm">Blue</span>
             </div>
           </div>
-          <div className="w-full items-center justify-center flex bg-blue-700 hover:bg-blue-500 py-2 rounded-full cursor-pointer mt-2">تکمیل خرید</div>
+          {/* <div className="w-full items-center justify-center flex bg-blue-700 hover:bg-blue-500 py-2 rounded-full cursor-pointer mt-2">اضافه شدن به سبد خرید</div> */}
+          <Button color="primary" variant="shadow" size="lg" className="w-full mt-2">
+            اضافه شدن به سبد خرید
+          </Button>
         </div>
       </div>
     </div>

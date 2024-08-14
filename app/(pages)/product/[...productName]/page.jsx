@@ -34,24 +34,6 @@ const SingleProduct = ({ params }) => {
     ],
     price: 44289500,
     discount: 10,
-    // summary_features: [
-    //   {
-    //     title: "فناوری صفحه‌ نمایش",
-    //     value: "Super Retina XDR OLED",
-    //   },
-    //   {
-    //     title: "رزولوشن دوربین",
-    //     value: "12 مگاپیکسل",
-    //   },
-    //   {
-    //     title: "نسخه سیستم عامل",
-    //     value: "iOS 15",
-    //   },
-    //   {
-    //     title: "اندازه",
-    //     value: "6.1",
-    //   },
-    // ],
     all_features: [
       {
         title: "معرفی",

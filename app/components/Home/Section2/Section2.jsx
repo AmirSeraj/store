@@ -7,7 +7,7 @@ const Section2 = () => {
       <RightSection />
       <div className='relative grid lg:col-span-4 col-span-12 -skew-x-3 border-r-2 border-slate-400 lg:order-2 order-1'>
 
-        <div className='absolute top-0 -left-7 skew-x-3 bg-black w-full h-[73px]' />
+        <div className='absolute top-0 lg:-left-7 left-0 skew-x-3 bg-black w-full h-[73px]' />
         <div className='w-full bg-black h-[73px] flex justify-start items-center pr-10 z-50'>
           <h2 class="title_text text-white mb-0"><strong>Deals</strong> of the week</h2>
         </div>
