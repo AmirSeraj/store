@@ -33,7 +33,7 @@ const Step2sidebar = () => {
                             <div key={index} className='w-full flex md:flex-row md:gap-0 gap-3 flex-col justify-between items-center p-2'>
                                 <div className='flex gap-3 items-center'>
                                     <div className='w-[80px] h-[80px] relative'>
-                                        <Image src={item.img} fill />
+                                        <Image src={item.img} fill alt={item.title} />
                                     </div>
                                     <div className='flex flex-col gap-3'>
                                         <p className='sm:text-[0.77rem] text-[0.7rem]'>{item.title}</p>

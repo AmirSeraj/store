@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import clsx from "clsx";
 import { NextUIProvider } from "@nextui-org/system";
+import Script from "next/script";
 
 export const metadata = {
   title: "فروشگاه من",
@@ -35,6 +36,10 @@ export default function RootLayout({ children }) {
           <main className="md:pt-6 pt-3">{children}</main>
           <Footer />
         </NextUIProvider>
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" strategy="beforeInteractive" />
+        <Script src="../lib/ir-city-select.js" strategy="beforeInteractive" />
+        {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> */}
+        {/* <script src="https://github.com/KayvanMazaheri/ir-city-select/releases/download/v0.2.0/ir-city-select.min.js"></script> */}
       </body>
     </html>
   );

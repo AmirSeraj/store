@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/button";
 import { Select, SelectItem } from "@nextui-org/select";
 
 const AddressDetails = () => {
+    
     const schema = Yup.object().shape({
         houseNumber: Yup.number().required(),
         address: Yup.string().required(),
@@ -89,7 +90,11 @@ const AddressDetails = () => {
             />
 
             <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
-                <Select
+                {/* <div className="ir-select">
+                    <select className="ir-province"></select>
+                    <select className="ir-city"></select>
+                </div> */}
+                {/* <Select
                     size={'sm'}
                     label={'استان'}
                     name="province"
@@ -120,7 +125,7 @@ const AddressDetails = () => {
                             {number}
                         </SelectItem>
                     ))}
-                </Select>
+                </Select> */}
             </div>
 
             <Button variant="shadow" type="submit" color="primary" className="my-5" radius="sm">تایید</Button>
