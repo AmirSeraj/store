@@ -1,6 +1,7 @@
-import { Button } from '@nextui-org/button'
+import ButtonClient from "./ButtonClient"
 
 const ShoppingCard = () => {
+
     const cartItem = [
         {
             title: 'گوشی سامسونگ مدل Galaxy S9',
@@ -17,7 +18,7 @@ const ShoppingCard = () => {
     ]
     return (
         <div className='lg:col-span-4 col-span-12 h-auto'>
-            <div className='shadow-xl flex flex-col gap-6 rounded-xl p-5'>
+            <div className='shadow-xl flex flex-col gap-6 rounded-xl sm:p-5 p-2'>
                 {cartItem.map((item, index) => (
                     <div key={index} className='flex justify-between items-center'>
                         <p className='sm:text-sm text-xs font-bold text-black'>{item.title}</p>
@@ -41,7 +42,7 @@ const ShoppingCard = () => {
                         <span className='text-[0.65rem]'>تومان</span>
                     </div>
                 </div>
-                <Button size='lg' variant='shadow' color='primary'>تایید و تکمیل سفارش</Button>
+                <ButtonClient />
             </div>
         </div>
     )
