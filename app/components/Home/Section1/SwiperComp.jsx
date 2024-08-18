@@ -14,13 +14,13 @@ const SwiperComp = ({ section1Swiper }) => {
     // <div className="col-span-7 h-full">
     <Swiper
       pagination={true}
-    //   effect={'fade'}
-    //   autoplay={{
-    //     delay: 7000,
-    //     disableOnInteraction: false,
-    //   }}
+      // effect={'fade'}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
       modules={[Autoplay, Pagination, EffectFade]}
-      className="lg:col-span-9 col-span-12 h-full bg-[url('/bgg.jpg')] bg-no-repeat w-full bg-cover"
+      className="h-full bg-[url('/bgg.jpg')] bg-no-repeat w-full bg-cover"
     >
       {section1Swiper.map((item, index) => (
         <SwiperSlide

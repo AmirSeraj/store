@@ -1,13 +1,10 @@
-import Image from "next/image";
-import { IoSearchOutline } from "react-icons/io5";
-import LeftSection from "./LeftSection";
-import HeaderMobileView from "./HeaderMobileView";
-import Link from "next/link";
+import HeaderTop from "./HeaderTop";
+import HeaderBottom from "./HeaderBottom";
 
 const Header = () => {
   return (
-    <div className="w-full sticky top-0 left-0 z-[40000] shadow-2xl drop-shadow-xl">
-      <header className="w-full bg-white py-5 justify-between items-center lg:flex hidden 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%]">
+    <div className="w-full sticky top-0 left-0 z-[40000] shadow-2xl drop-shadow-xl bg-white">
+      {/* <header className="w-full bg-white py-5 justify-between items-center lg:flex hidden 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%]">
         <div className="flex justify-center items-center gap-4">
           <Link href={'/'} className="flex justify-center items-center gap-2">
             <Image width={35} height={35} src={"/brand.svg"} />
@@ -23,7 +20,13 @@ const Header = () => {
         </div>
         <LeftSection />
       </header>
-      <HeaderMobileView />
+      <HeaderMobileView /> */}
+
+      <div className="flex flex-col py-1">
+        <HeaderTop />
+        <div className="w-full h-[1px] bg-slate-200" />
+        <HeaderBottom />
+      </div>
     </div>
   );
 };

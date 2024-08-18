@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
       >
         <NextUIProvider>
           <Header />
-          <main className="md:pt-6 pt-3">{children}</main>
+          <main>{children}</main>
           <Footer />
         </NextUIProvider>
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" strategy="beforeInteractive" />

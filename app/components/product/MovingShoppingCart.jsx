@@ -37,17 +37,15 @@ const MovingShoppingCart = ({ product }) => {
       </div>
     );
   }
-  const [showDiv, setShowDiv] = useState(false);
+  const [showDiv, setShowDiv] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const showPoint = 100; // The scroll position to show the div
       const hidePoint = 850; // The scroll position to hide the div
-
-      if (scrollPosition >= showPoint && scrollPosition < hidePoint) {
-        setShowDiv(true);
-      } else {
+      if (scrollPosition >= hidePoint) {
         setShowDiv(false);
+      } else {
+        setShowDiv(true);
       }
     };
 
@@ -58,8 +56,8 @@ const MovingShoppingCart = ({ product }) => {
   }, []);
   return (
     <>
-      {showDiv && (
-        <div className="fixed lg:top-[95px] top-[143px] bg-white w-full h-[130px] border-b border-slate-300 z-50 shadow-xl 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%] flex md:flex-row flex-col items-center justify-between">
+      {/* {showDiv && ( */}
+        <div className={`bg-white w-full h-[130px] sticky top-[135px] left-0 border-b border-slate-300 z-50 shadow-xl 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%] flex md:flex-row flex-col items-center justify-between`}>
           <div className="flex md:flex-row flex-col items-center lg:gap-4 gap-2 h-full md:w-1/2 w-full">
             {/* <div className="items-center justify-center flex bg-blue-700 hover:bg-blue-500 py-2 rounded-full cursor-pointer mt-2 md:w-[300px] w-full">
               اضافه شدن به سبد خرید
@@ -75,7 +73,7 @@ const MovingShoppingCart = ({ product }) => {
           </div>
           <IphoneFunc className={"md:flex hidden"} />
         </div>
-      )}
+      {/* )} */}
     </>
   );
 };

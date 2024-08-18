@@ -6,7 +6,7 @@ import Section5 from "./components/Home/Section5/Section5";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-7 pb-5">
+    <div className="flex flex-col gap-7 pb-5 md:pt-6 pt-3">
       <Section1 />
       <Section2 />
       <Section3 />
