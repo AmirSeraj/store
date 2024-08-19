@@ -1,7 +1,6 @@
-import React from 'react'
 import { PinContainer } from '../../ui/3d-pin'
-import { Cover } from '../../ui/cover'
 import Image from 'next/image';
+import Header from '../Header';
 
 const Section4 = () => {
     const products = [
@@ -57,19 +56,7 @@ const Section4 = () => {
     ];
     return (
         <div className='w-full 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%]'>
-            <div className='flex items-center px-6 mb-5'>
-                <div className='w-1/5 -skew-x-[25deg] bg-black h-[100px] relative'>
-                    <Cover>
-                        پرفروش ترین ها
-                    </Cover>
-                </div>
-                <div className='w-3/5' />
-                <div className='w-1/5 -skew-x-[25deg] bg-pink-400 h-[100px] relative'>
-                    <div className='w-full bg-pink-400 absolute h-full skew-x-[25deg] right-6 text-white flex justify-center items-center'>
-                        پیشنهاد شگفت انگیز
-                    </div>
-                </div>
-            </div>
+            <Header title1={'پرفروش ترین ها'} title3={'پیشنهاد شگفت انگیز'} />
             <div className='w-full flex flex-wrap justify-center pb-5 '>
                 {
                     products.map((item, index) => (

@@ -1,8 +1,8 @@
 import { IoSearchOutline } from "react-icons/io5";
 
-const SearchComp = ({className, size, className2}) => {
+const SearchComp = ({ className, size, className2, handleClick }) => {
     return (
-        <div className={` p-2 rounded-full shadow-xl drop-shadow-lg bg-gray-300 items-center ${className}`}>
+        <div onClick={handleClick} className={` p-2 rounded-full bg-gray-300 items-center ${className}`}>
             <IoSearchOutline color="#c0c0c0" size={size} />
             <input
                 className={`w-full h-full bg-transparent outline-none text-[0.8rem] text-black ${className2}`}

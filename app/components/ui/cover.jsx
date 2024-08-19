@@ -35,9 +35,9 @@ export const Cover = ({
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             ref={ref}
-            className="relative hover:bg-neutral-900  group/cover dark:bg-neutral-900 bg-neutral-900 px-2 py-2 w-full h-full -skew-x-[0] flex items-center justify-center transition duration-200"
+            className="relative hover:bg-neutral-900  group/cover dark:bg-neutral-900 bg-neutral-900 px-2 sm:py-2 py-5 w-full h-full flex items-center justify-center transition duration-200"
         >
-            <div className={`bg-neutral-900 ${hovered && 'bg-neutral-900'} absolute skew-x-[25deg] -right-[25px] w-full h-full`} />
+            <div className={`bg-neutral-900 ${hovered && 'bg-neutral-900'} absolute skew-x-[25deg] -right-[25px] w-full h-full sm:block hidden`} />
             <AnimatePresence>
                 {/* {hovered && ( */}
                     <motion.div
