@@ -59,7 +59,7 @@ const SimilarProducts = ({ features, title, nextClass, prevClass }) => {
         // slidesPerView={'auto'}
       >
         {features.map((item, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <CardComp
               img={item.img}
               colors={item?.colors}

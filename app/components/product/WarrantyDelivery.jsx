@@ -11,6 +11,7 @@ const WarrantyDelivery = () => {
           height={56}
           objectPosition="center"
           objectFit="contain"
+          alt={title}
         />
         <p className="xs:text-sm text-xs">{title}</p>
       </div>

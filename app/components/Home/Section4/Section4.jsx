@@ -89,7 +89,7 @@ const Section4 = () => {
                                     </span>
                                 </div>
                                 <div className='w-[280px] h-[270px] relative'>
-                                    <Image fill src={item.img} priority quality={90} objectFit='contain' />
+                                    <Image alt={'img' + index} fill src={item.img} priority quality={90} objectFit='contain' />
                                 </div>
                                 {/* <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" /> */}
                             </div>

@@ -13,6 +13,7 @@ const CardComp = ({ img, colors, desc, price, rate, title, className }) => {
           objectFit="contain"
           width={250}
           height={240}
+          alt="img"
         />
         <div className="w-full p-1 flex justify-center gap-1 mt-1">
           {colors.map((color, i) => (

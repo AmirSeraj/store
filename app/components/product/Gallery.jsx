@@ -35,7 +35,7 @@ const Gallery = ({ productImages }) => {
           key={index}
           className="w-full !flex justify-center items-center"
         >
-          <Image src={img} width={550} height={550} />
+          <Image alt={'img' + index} src={img} width={550} height={550} />
         </SwiperSlide>
       ))}
       <div>

@@ -40,7 +40,7 @@ const ShoppingDetails = () => {
                                 <div key={index} className='w-full flex md:flex-row md:gap-0 gap-3 flex-col justify-between items-center md:p-3 p-1.5'>
                                     <div className='flex gap-3 items-center'>
                                         <div className='w-[80px] h-[80px] relative'>
-                                            <Image src={item.img} fill />
+                                            <Image src={item.img} fill alt={item.img + index} />
                                         </div>
                                         <div className='flex flex-col gap-3'>
                                             <p className='sm:text-sm text-[0.77rem]'>{item.title}</p>

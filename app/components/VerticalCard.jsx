@@ -10,7 +10,7 @@ const VerticalCard = ({ img, discount, title, price }) => {
                 - {Number(discount).toLocaleString()} off
             </div>
             {/* <div className='w-full h-full p-5 relative'> */}
-            <Image className='bg-none' width={190} height={160} src={img} />
+            <Image alt={title} className='bg-none' width={190} height={160} src={img} />
             {/* </div> */}
             {/* </div> */}
             <div className='px-2 flex flex-col gap-3'>

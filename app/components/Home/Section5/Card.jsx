@@ -6,7 +6,7 @@ const Card = ({ data }) => {
   return (
     <div className='p-3 text-black flex md:flex-row flex-col min-h-[180px] border border-slate-300 rounded-lg'>
       <div className='md:w-2/5 w-full flex justify-center items-center md:order-2 order-1'>
-        <Image src={data.img} width={150} height={150} />
+        <Image alt={data.title} src={data.img} width={150} height={150} />
       </div>
       <div className='md:w-3/5 w-full flex flex-col justify-evenly gap-2 md:order-1 order-2'>
         <p className='text-black 2xl:text-xl lg:text-sm '>

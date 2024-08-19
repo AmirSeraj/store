@@ -33,6 +33,7 @@ const SwiperComp = ({ section1Swiper }) => {
               width={381}
               height={341}
               objectFit="contain"
+              alt={'img' + index}
             />
           </div>
           <div className="flex flex-col justify-center items-center h-full gap-5">
