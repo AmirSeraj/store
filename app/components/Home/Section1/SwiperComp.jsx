@@ -4,22 +4,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Pagination, Autoplay, EffectFade, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 const SwiperComp = ({ section1Swiper }) => {
   return (
-    // <div className="col-span-7 h-full">
     <Swiper
       pagination={true}
-      // effect={'fade'}
+      navigation={true}
       autoplay={{
-        delay: 3000,
+        delay: 5000,
         disableOnInteraction: false,
       }}
-      modules={[Autoplay, Pagination, EffectFade]}
+      modules={[Autoplay, Pagination, EffectFade, Navigation]}
       className="h-full bg-[url('/bgg.jpg')] bg-no-repeat w-full bg-cover"
     >
       {section1Swiper.map((item, index) => (
@@ -43,7 +43,6 @@ const SwiperComp = ({ section1Swiper }) => {
         </SwiperSlide>
       ))}
     </Swiper>
-    // </div>
   );
 };
 

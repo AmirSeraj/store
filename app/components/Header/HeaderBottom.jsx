@@ -43,7 +43,7 @@ const HeaderBottom = () => {
             </div>
 
             {/* mobile view sidebar */}
-            <div className={`fixed w-[300px] min-h-screen top-0 right-0 bg-gray-100/95 sm:p-8 p-4 flex flex-col gap-3 z-50 ${!openSidebar && 'hidden'}`}>
+            <div className={`fixed w-[300px] h-[100dvh] top-0 right-0 bg-gray-100/95 sm:p-8 p-4 flex flex-col gap-3 z-50 ${!openSidebar && 'hidden'}`}>
                 <div className="flex items-center justify-start gap-3 mb-5">
                     <div className="cursor-pointer" onClick={() => setOpenSidebar(false)}>
                         <IoClose size={20} />
@@ -53,7 +53,7 @@ const HeaderBottom = () => {
                 <MenuMobile />
                 <div className="mt-auto p-4 flex flex-col gap-3">
                     <CustomBtn color={'warning'} title={'پشتیبانی'} href={'https://t.me/TenTechStore'} className={'text-xs w-full'} />
-                    <CustomBtn title={'ورود به حساب کاربری'} variant={'light'} className={'text-xs text-black'} href={'/login'} />
+                    <CustomBtn title={'ورود به حساب کاربری'} variant={'light'} className={'text-xs text-black'} href={'/signin'} />
                 </div>
             </div>
             {/* mobile view sidebar */}
@@ -66,7 +66,7 @@ const HeaderBottom = () => {
             <div className="flex items-center gap-1">
                 <CustomBtn color={'warning'} variant={'shadow'} title={'پشتیبانی'} href={'https://t.me/TenTechStore'} className={'text-xs xl:block hidden'} />
                 <CustomBtn color={'primary'} variant={'shadow'} title={'ورود'} href={'/login'} className={`xl:hidden ${expandSearch && 'hidden'}`} icon={<HiLogin size={20} />} />
-                <CustomBtn title={'ورود به حساب کاربری'} variant={'light'} className={'text-xs text-black xl:block hidden'} href={'/login'} />
+                <CustomBtn title={'ورود به حساب کاربری'} variant={'light'} className={'text-xs text-black xl:block hidden'} href={'/signin'} />
                 <CustomBtn title={'سبد خرید'} variant={'shadow'} color={'primary'} className={`text-xs text-white ${expandSearch && 'hidden'}`} href={'/'} icon={<MdOutlineAddShoppingCart size={16} />} />
             </div>
         </div>
