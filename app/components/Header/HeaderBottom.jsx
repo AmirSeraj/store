@@ -11,6 +11,7 @@ import ArmComp from "./ArmComp";
 import SearchComp from "./SearchComp";
 import MenuMobile from "./MenuMobile";
 import CustomBtn from "./CustomBtn";
+import { FaTelegramPlane } from "react-icons/fa";
 
 const HeaderBottom = () => {
     const [openSidebar, setOpenSidebar] = useState(false);
@@ -52,7 +53,7 @@ const HeaderBottom = () => {
                 </div>
                 <MenuMobile />
                 <div className="mt-auto p-4 flex flex-col gap-3">
-                    <CustomBtn color={'warning'} title={'پشتیبانی'} href={'https://t.me/TenTechStore'} className={'text-xs w-full'} />
+                    <CustomBtn color={'warning'} title={'پشتیبانی'} href={'https://t.me/TenTechStore'} className={'text-xs w-full'} icon={<FaTelegramPlane color="#4242ff" size={18} />} />
                     <CustomBtn title={'ورود به حساب کاربری'} variant={'light'} className={'text-xs text-black'} href={'/signin'} />
                 </div>
             </div>
@@ -64,8 +65,8 @@ const HeaderBottom = () => {
             </div>
             <Menu />
             <div className="flex items-center gap-1">
-                <CustomBtn color={'warning'} variant={'shadow'} title={'پشتیبانی'} href={'https://t.me/TenTechStore'} className={'text-xs xl:block hidden'} />
-                <CustomBtn color={'primary'} variant={'shadow'} title={'ورود'} href={'/login'} className={`xl:hidden ${expandSearch && 'hidden'}`} icon={<HiLogin size={20} />} />
+                <CustomBtn color={'warning'} variant={'shadow'} title={'پشتیبانی'} href={'https://t.me/TenTechStore'} icon={<FaTelegramPlane color="#4242ff" size={18} />} className={'text-xs xl:block hidden'} />
+                <CustomBtn color={'primary'} variant={'shadow'} title={'ورود'} href={'/signin'} className={`xl:hidden ${expandSearch && 'hidden'}`} icon={<HiLogin size={20} />} />
                 <CustomBtn title={'ورود به حساب کاربری'} variant={'light'} className={'text-xs text-black xl:block hidden'} href={'/signin'} />
                 <CustomBtn title={'سبد خرید'} variant={'shadow'} color={'primary'} className={`text-xs text-white ${expandSearch && 'hidden'}`} href={'/'} icon={<MdOutlineAddShoppingCart size={16} />} />
             </div>
