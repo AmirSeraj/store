@@ -15,14 +15,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-
-  // apiKey: "AIzaSyDmLgoPUdzkNhjEnFTdxer5Y1qhbObfcUA",
-  // authDomain: "store-92cb7.firebaseapp.com",
-  // projectId: "store-92cb7",
-  // storageBucket: "store-92cb7.appspot.com",
-  // messagingSenderId: "554317645370",
-  // appId: "1:554317645370:web:699fc3171298a93b83d703",
-  // measurementId: "G-DMDE6BFMWR"
 };
 
 // Initialize Firebase
