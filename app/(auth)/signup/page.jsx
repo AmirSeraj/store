@@ -4,18 +4,31 @@ import { FormError } from "@/app/components/form-error";
 import { Button } from "@nextui-org/button";
 import { useFormik } from "formik";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import * as Yup from "yup";
 
 const SignUp = () => {
+  // states
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState("");
+  const [opt, setOpt] = useState(false);
+  const [confirmationResult, setConfirmationResult] = useState(null);
+  const [recaptchaVerifier, setRecaptchaVerifier] = useState(null);
+  const [isPending, startTransition] = useTransition();
+  const [code, setCode] = useState(null);
+  const router = useRouter();
   const phoneValidation = new RegExp(
     /^(?:(?:\+|00)98)?(?:0)?(9\d{9}|(?:[1-8]\d{2,3})\d{7,8})$/
   );
+
+  // schemas
   const schema = Yup.object().shape({
     firstname: Yup.string().required("نام الزامی است."),
     lastname: Yup.string().required("نام خانوادگی الزامی است."),
-    phone: Yup.string().required("شماره همراه معتبر نیست").matches(phoneValidation, "شماره همراه معتبر نیست"),
+    phone: Yup.string()
+      .required("شماره همراه معتبر نیست")
+      .matches(phoneValidation, "شماره همراه معتبر نیست"),
     code_meli: Yup.number().min(10).required("کد ملی الزامی است."),
     password: Yup.string().required("رمز عبور الزامی است."),
     confirmPassword: Yup.string().required("تکرار رمز عبور الزامی است."),
@@ -38,6 +51,7 @@ const SignUp = () => {
         setError("رمز عبور و تکرار رمز عبور یکسان نیستند");
       } else {
         setError(null);
+
         console.log("values", values);
       }
     },
