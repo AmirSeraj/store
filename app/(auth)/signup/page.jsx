@@ -5,8 +5,10 @@ import { Button } from "@nextui-org/button";
 import { useFormik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import * as Yup from "yup";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { auth } from "@/firebase/config";
 
 const SignUp = () => {
   // states
@@ -34,6 +36,24 @@ const SignUp = () => {
     confirmPassword: Yup.string().required("تکرار رمز عبور الزامی است."),
   });
 
+  // recaptcha settings
+  useEffect(() => {
+    const recaptchaVerifier = new RecaptchaVerifier(
+      auth,
+      "recaptcha-container",
+      {
+        size: "invisible",
+        callback: (response) => {},
+        "expired-callback": () => {},
+      }
+    );
+    setRecaptchaVerifier(recaptchaVerifier);
+    return () => {
+      recaptchaVerifier.clear();
+    };
+  }, [auth]);
+
+  /**formik settings */
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -47,13 +67,42 @@ const SignUp = () => {
     validationSchema: schema,
 
     onSubmit: async (values) => {
+      /**formatting phone number */
+      const formattedPhoneNumber = phone.startsWith("0")
+        ? phone.substring(1)
+        : phone;
+      const phoneNumber = "+98" + formattedPhoneNumber;
+
       if (values.password !== values.confirmPassword) {
         setError("رمز عبور و تکرار رمز عبور یکسان نیستند");
-      } else {
-        setError(null);
-
-        console.log("values", values);
+        return;
       }
+
+      startTransition(async () => {
+        setError("");
+        setOpt(false);
+        try {
+          const confirmationResult = await signInWithPhoneNumber(
+            auth,
+            phoneNumber,
+            recaptchaVerifier
+          );
+          setConfirmationResult(confirmationResult);
+          setSuccess("کد با موفقیت ارسال شد.");
+          if (confirmationResult) {
+            setOpt(true);
+          }
+        } catch (error) {
+          console.log(error);
+          if (error.code === "auth/invalid-phone-number") {
+            setError("شماره همراه اشتباه است.");
+          } else if (error.code === "auth/too-many-requests") {
+            setError("تعداد درخواست غیر مجاز");
+          } else {
+            setError("کد ارسال نگردید. دوباره تلاش کنید.");
+          }
+        }
+      });
     },
   });
 
@@ -62,6 +111,7 @@ const SignUp = () => {
 
   return (
     <div className="flex min-h-[calc(100dvh-441px)] w-full items-center justify-center my-5">
+      {/* step 1 */}
       <div className="flex w-full max-w-md flex-col gap-4 rounded-large bg-content1 px-8 pb-10 pt-6 shadow-small">
         <p className="pb-2 text-2xl text-center font-bold">ثبتنام</p>
         <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
@@ -147,6 +197,42 @@ const SignUp = () => {
             </Link>
           </p>
         </form>
+      </div>
+
+      {/* Insert otp code step 2 */}
+      <div
+        className={`w-full max-w-md flex-col gap-4 rounded-large bg-content1 px-8 pb-10 pt-6 shadow-small ${
+          opt ? "flex" : "hidden"
+        }`}
+      >
+        <p className="pb-2 text-2xl text-center font-bold">
+          کد ارسال شده را وارد کنید
+        </p>
+        <CustomInput
+          isRequired={true}
+          label={"کد ارسال شده به شماره همراه را وارد کنید."}
+          name="code"
+          type={"number"}
+          // value={values.code}
+          // isInvalid={errors.code && touched.code}
+          // color={errors.code && touched.code ? "danger" : "success"}
+          errorMessage=" کد الزامی است."
+          onChange={(e) => setCode(e.target.value)}
+        />
+        <Button
+          isDisabled={isPending}
+          isLoading={isPending}
+          color="primary"
+          // onClick={handleCheckCode}
+        >
+          تکمیل ثبتنام
+        </Button>
+        {/* <Button color="primary" onClick={handleCheckCode}>
+          ورود
+        </Button> */}
+        <div className={`p-1 text-center ${error ? "block" : "hidden"}`}>
+          {error && <p className="text-red-500">{error}</p>}
+        </div>
       </div>
     </div>
   );

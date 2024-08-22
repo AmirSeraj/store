@@ -8,11 +8,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 import { FcGoogle } from "react-icons/fc";
 import * as Yup from "yup";
-import {
-  getAuth,
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
-} from "firebase/auth";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "@/firebase/config";
 
 const SignIn = () => {
@@ -170,7 +166,7 @@ const SignIn = () => {
         <div id="recaptcha-container" />
       </div>
 
-      {/* Insert otp code */}
+      {/* Insert otp code step 2 */}
       <div
         className={`w-full max-w-md flex-col gap-4 rounded-large bg-content1 px-8 pb-10 pt-6 shadow-small ${
           opt ? "flex" : "hidden"
