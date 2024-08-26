@@ -194,9 +194,6 @@ const SignIn = () => {
         >
           ورود
         </Button>
-        {/* <Button color="primary" onClick={handleCheckCode}>
-          ورود
-        </Button> */}
         <div className={`p-1 text-center ${error ? "block" : "hidden"}`}>
           {error && <p className="text-red-500">{error}</p>}
         </div>

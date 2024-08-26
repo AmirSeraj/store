@@ -1,8 +1,10 @@
 import { PinContainer } from '../../ui/3d-pin'
 import Image from 'next/image';
 import Header from '../Header';
+import { getAmazingCards } from '@/app/apis/Home/getCardsSection4';
 
-const Section4 = () => {
+const Section4 = async () => {
+    const cards = await getAmazingCards();
     const products = [
         {
             slug: 'گوشی-سامسونگ-مدل-124',

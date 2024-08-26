@@ -1,17 +1,17 @@
 "use client";
 import CustomInput from "@/app/components/CustomInput";
-import { FormError } from "@/app/components/form-error";
 import { Button } from "@nextui-org/button";
+import { Divider } from "@nextui-org/divider";
 import { useFormik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
+import { FcGoogle } from "react-icons/fc";
 import * as Yup from "yup";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "@/firebase/config";
 
 const SignUp = () => {
-  // states
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState("");
   const [opt, setOpt] = useState(false);
@@ -19,24 +19,21 @@ const SignUp = () => {
   const [recaptchaVerifier, setRecaptchaVerifier] = useState(null);
   const [isPending, startTransition] = useTransition();
   const [code, setCode] = useState(null);
-  const router = useRouter();
   const phoneValidation = new RegExp(
     /^(?:(?:\+|00)98)?(?:0)?(9\d{9}|(?:[1-8]\d{2,3})\d{7,8})$/
   );
-
-  // schemas
+  const router = useRouter();
   const schema = Yup.object().shape({
     firstname: Yup.string().required("نام الزامی است."),
     lastname: Yup.string().required("نام خانوادگی الزامی است."),
     phone: Yup.string()
-      .required("شماره همراه معتبر نیست")
+      .required("شماره همراه الزامی است.")
       .matches(phoneValidation, "شماره همراه معتبر نیست"),
     code_meli: Yup.number().min(10).required("کد ملی الزامی است."),
     password: Yup.string().required("رمز عبور الزامی است."),
     confirmPassword: Yup.string().required("تکرار رمز عبور الزامی است."),
   });
 
-  // recaptcha settings
   useEffect(() => {
     const recaptchaVerifier = new RecaptchaVerifier(
       auth,
@@ -47,13 +44,14 @@ const SignUp = () => {
         "expired-callback": () => {},
       }
     );
+
     setRecaptchaVerifier(recaptchaVerifier);
+
     return () => {
       recaptchaVerifier.clear();
     };
   }, [auth]);
 
-  /**formik settings */
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -67,17 +65,14 @@ const SignUp = () => {
     validationSchema: schema,
 
     onSubmit: async (values) => {
-      /**formatting phone number */
-      const formattedPhoneNumber = phone.startsWith("0")
+      const formattedPhoneNumber = values.phone.startsWith("0")
         ? phone.substring(1)
         : phone;
       const phoneNumber = "+98" + formattedPhoneNumber;
-
       if (values.password !== values.confirmPassword) {
         setError("رمز عبور و تکرار رمز عبور یکسان نیستند");
         return;
       }
-
       startTransition(async () => {
         setError("");
         setOpt(false);
@@ -88,6 +83,7 @@ const SignUp = () => {
             recaptchaVerifier
           );
           setConfirmationResult(confirmationResult);
+          console.log("ddddd", confirmationResult);
           setSuccess("کد با موفقیت ارسال شد.");
           if (confirmationResult) {
             setOpt(true);
@@ -109,10 +105,32 @@ const SignUp = () => {
   // Destructure the formik object
   const { errors, touched, values, handleChange, handleSubmit } = formik;
 
+  //step 2 compare codes
+  const handleCheckCode = () => {
+    startTransition(async () => {
+      setError(null);
+      try {
+        await confirmationResult.confirm(code);
+        // TODO - where should i put await???
+        // await ..... send data to backend
+        router.push("/");
+      } catch (error) {
+        setError("کد وارد شده صحیح نیست. دوباره تلاش کنید.");
+      }
+    });
+  };
+
   return (
-    <div className="flex min-h-[calc(100dvh-441px)] w-full items-center justify-center my-5">
-      {/* step 1 */}
-      <div className="flex w-full max-w-md flex-col gap-4 rounded-large bg-content1 px-8 pb-10 pt-6 shadow-small">
+    <div
+      className={
+        "flex min-h-[calc(100dvh-441px)] w-full items-center justify-center my-5"
+      }
+    >
+      <div
+        className={`flex w-full max-w-md flex-col gap-4 rounded-large bg-content1 px-8 pb-10 pt-6 shadow-small ${
+          opt ? "hidden" : "flex"
+        }`}
+      >
         <p className="pb-2 text-2xl text-center font-bold">ثبتنام</p>
         <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
           <CustomInput
@@ -187,9 +205,15 @@ const SignUp = () => {
             onChange={handleChange}
           />
           {error && <FormError message={error} />}
+          {success && <FormError message={success} />}
           <Button color="primary" type="submit">
             ثبت نام
           </Button>
+          <div className="flex items-center gap-4 py-2">
+            <Divider className="flex-1" />
+            <p className="shrink-0 text-tiny text-default-500">یا</p>
+            <Divider className="flex-1" />
+          </div>
           <p className="text-right text-xs">
             حساب کاربری دارید؟&nbsp;
             <Link href="/signin" size="sm">
@@ -223,13 +247,10 @@ const SignUp = () => {
           isDisabled={isPending}
           isLoading={isPending}
           color="primary"
-          // onClick={handleCheckCode}
+          onClick={handleCheckCode}
         >
-          تکمیل ثبتنام
-        </Button>
-        {/* <Button color="primary" onClick={handleCheckCode}>
           ورود
-        </Button> */}
+        </Button>
         <div className={`p-1 text-center ${error ? "block" : "hidden"}`}>
           {error && <p className="text-red-500">{error}</p>}
         </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Card from './Card'
 import { AiOutlineMergeCells } from "react-icons/ai";
+import { getLastCards } from '@/app/apis/Home/getCardsSection5';
 
 const loadingStates = [
     {
@@ -101,7 +102,9 @@ const data = [
     },
 ]
 
-const Section5 = () => {
+const Section5 = async () => {
+
+    const cards = await getLastCards();
 
     return (
         <div className='w-full flex h-auto my-5'>

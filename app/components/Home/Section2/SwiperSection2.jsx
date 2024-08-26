@@ -10,65 +10,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 
-const data = [
-    {
-        img: '/product/img_23.png',
-        price: 34568987,
-        discount: 1358965,
-        title: 'گوشی موبایل اپل مدل iPhone 12 ZA/A دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت - نات اکتیو',
-        relatedImgs: [
-            '/product/img_23.png',
-            '/product/img_23.png',
-            '/product/img_23.png',
-        ]
-    },
-    {
-        img: '/product/img_23.png',
-        price: 34568987,
-        discount: 1358965,
-        title: 'گوشی موبایل اپل مدل iPhone 12 ZA/A دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت - نات اکتیو',
-        relatedImgs: [
-            '/product/img_23.png',
-            '/product/img_23.png',
-            '/product/img_23.png',
-        ]
-    },
-    {
-        img: '/product/img_23.png',
-        price: 34568987,
-        discount: 1358965,
-        title: 'گوشی موبایل اپل مدل iPhone 12 ZA/A دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت - نات اکتیو',
-        relatedImgs: [
-            '/product/img_23.png',
-            '/product/img_23.png',
-            '/product/img_23.png',
-        ]
-    },
-    {
-        img: '/product/img_23.png',
-        price: 34568987,
-        discount: 1358965,
-        title: 'گوشی موبایل اپل مدل iPhone 12 ZA/A دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت - نات اکتیو',
-        relatedImgs: [
-            '/product/img_23.png',
-            '/product/img_23.png',
-            '/product/img_23.png',
-        ]
-    },
-    {
-        img: '/product/img_23.png',
-        price: 34568987,
-        discount: 1358965,
-        title: 'گوشی موبایل اپل مدل iPhone 12 ZA/A دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 4 گیگابایت - نات اکتیو',
-        relatedImgs: [
-            '/product/img_23.png',
-            '/product/img_23.png',
-            '/product/img_23.png',
-        ]
-    },
-]
-
-const SwiperSection2 = () => {
+const SwiperSection2 = ({data}) => {
     return (
         <div className="flex flex-col h-[calc(100%-73px)] w-full overflow-hidden gap-2 items-center">
             <Swiper

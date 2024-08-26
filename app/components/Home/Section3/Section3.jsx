@@ -1,7 +1,9 @@
+import { getCards } from "@/app/apis/Home/getSection3Cards"
 import Header from "../Header"
 import { CustomCard } from "./CustomCard"
 
-const Section3 = () => {
+const Section3 = async () => {
+    const cards = await getCards();
     return (
         <div className='w-full 2xl:px-[18%] xl:px-[13%] sm:px-[8%] px-[5%]'>
             <Header title1={'پیشنهاد شگفت انگیز'} title3={'پیشنهاد شگفت انگیز'} />

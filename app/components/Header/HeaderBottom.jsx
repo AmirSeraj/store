@@ -1,6 +1,4 @@
 'use client'
-import { Button } from "@nextui-org/button";
-import Link from "next/link";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import Menu from "./Menu";
 import { HiLogin } from "react-icons/hi";
